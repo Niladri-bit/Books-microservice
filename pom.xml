@@ -72,12 +72,28 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <mainClass>com.assignment.book.service.BooksService.BooksServiceApplication</mainClass> <!-- Update with your main class -->
+                <excludes>
+                    <exclude>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </exclude>
+                </excludes>
+            </configuration>
+            <executions>
+    <execution>
+        <goals>
+            <goal>repackage</goal>
+        </goals>
+    </execution>
+</executions>
+        </plugin>
+    </plugins>
+</build>
 
 </project>
